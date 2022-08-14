@@ -1,0 +1,27 @@
+.search input {
+    background-color: white;
+    border: 0;
+    box-shadow: 0 0 10px 1px hsla(0, 0%, 52%, 0.274);
+    font-size: 12px;
+    padding: 15px;
+    height: 46px;
+    width: 430px;
+    font-family: 'Nunito Sans', sans-serif;
+    padding-left: 50px;
+    font-weight: 600;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+.search-inputs {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 8px;
+    left: 11px;
+}

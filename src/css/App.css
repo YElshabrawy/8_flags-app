@@ -10,15 +10,7 @@ html,
 body,
 #root,
 .App {
-    height: 100%;
-}
-
-#dark html,
-#dark body,
-#dark #root,
-#dark .App {
-    /* height: 100%; */
-    background-color: hsl(207, 26%, 17%);
+    min-height: 100vh;
 }
 
 #light {
@@ -33,6 +25,7 @@ body,
 
 body {
     font-family: 'Nunito Sans', sans-serif;
+    /* height: 100vh; */
 }
 
 html {

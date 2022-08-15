@@ -10,7 +10,6 @@ function SearchBar({ setData, placeholder, data }) {
                 .toLowerCase()
                 .includes(e.target.value.toLowerCase());
         });
-        // console.log(result);
         setData(result);
     };
     return (
@@ -27,7 +26,7 @@ function SearchBar({ setData, placeholder, data }) {
                     <SearchIcon color="action" />
                 </div>
             </div>
-            <div className="data-results"></div>
+            {/* <div className="data-results"></div> */}
         </div>
     );
 }

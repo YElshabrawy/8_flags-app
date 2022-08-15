@@ -1,0 +1,34 @@
+.dropdown {
+    background-color: white;
+    border: 0;
+    box-shadow: 0 0 10px 1px hsla(0, 0%, 52%, 0.274);
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 15px;
+    height: 46px;
+    width: 180px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    border-right: 16px solid transparent;
+}
+
+.dropdown2 {
+    font-size: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    color: black;
+    width: 180px;
+    box-shadow: 0 0 10px 1px hsla(0, 0%, 52%, 0.274);
+}
+
+option * {
+    width: 180px;
+    height: 46px;
+    background-color: white;
+    color: inherit;
+}
+
+.dropdown:focus {
+    /* border: 0; */
+    outline: 0;
+}

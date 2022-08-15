@@ -40,6 +40,11 @@ function Main() {
                 population={c.population.toLocaleString('en-US')}
                 region={c.region}
                 capital={c.capital}
+                languages={c.languages}
+                currencies={c.currencies}
+                tld={c.tld}
+                subRegion={c.subregion}
+                nativeName={c.name.nativeName}
             />
         ) : null;
     });

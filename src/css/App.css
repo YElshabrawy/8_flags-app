@@ -6,9 +6,33 @@
     box-sizing: border-box;
 }
 
+html,
+body,
+#root,
+.App {
+    height: 100%;
+}
+
+#dark html,
+#dark body,
+#dark #root,
+#dark .App {
+    /* height: 100%; */
+    background-color: hsl(207, 26%, 17%);
+}
+
+#light {
+    background-color: hsl(0, 0%, 98%);
+    transition: all 2s;
+}
+
+#dark {
+    background-color: hsl(207, 26%, 17%);
+    transition: all 2s;
+}
+
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background-color: hsl(0, 0%, 98%);
 }
 
 html {
@@ -19,12 +43,41 @@ img {
     max-width: 100%;
 }
 
+#dark h3 {
+    color: #fff;
+}
+
 .nav-container {
     width: 100%;
     height: 80px;
     background-color: #fff;
     box-shadow: 0 0 10px 1px hsla(0, 0%, 52%, 0.274);
     margin-bottom: 30px;
+    transition: all 2s;
+}
+
+#dark .nav-container {
+    background-color: hsl(209, 23%, 22%);
+    color: #fff;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%), 0 -5px 10px rgb(0 0 0 / 10%);
+    transition: all 2s;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid; */
+    /* animation: spin 500ms infinite; */
+}
+
+.toggle-btn:active {
+    animation: spin 500ms;
+}
+
+#dark .toggle-btn {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(298deg)
+        brightness(102%) contrast(102%);
 }
 
 .flex-container {
@@ -66,6 +119,14 @@ img {
     overflow: hidden;
     min-height: 360px;
     min-width: 280px;
+    transition: all 2s;
+}
+
+#dark .card {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%), 0 -5px 10px rgb(0 0 0 / 10%);
+    color: #fff;
+    background-color: hsl(209, 23%, 22%);
+    transition: all 2s;
 }
 
 .card--img {
@@ -92,4 +153,13 @@ img {
 
 p {
     font-size: 16px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

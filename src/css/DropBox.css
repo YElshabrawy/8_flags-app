@@ -19,6 +19,14 @@
     color: black;
     width: 180px;
     box-shadow: 0 0 10px 1px hsla(0, 0%, 52%, 0.274);
+    transition: all 2s;
+}
+
+#dark .dropdown2 {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%), 0 -5px 10px rgb(0 0 0 / 10%);
+    color: white;
+    background-color: hsl(209, 23%, 22%);
+    transition: all 2s;
 }
 
 option * {

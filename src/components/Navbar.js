@@ -1,12 +1,21 @@
 import React from 'react';
 
-function Navbar() {
+function Navbar(props) {
     return (
         <nav>
             <div className="nav-container">
                 <div className="flex-container">
                     <h1>Where in the world?</h1>
-                    <img className="toggle-btn" src="assets/moon.svg" alt="" />
+                    <img
+                        onClick={props.toggleTheme}
+                        className="toggle-btn"
+                        src={
+                            props.theme === 'light'
+                                ? 'assets/moon.svg'
+                                : 'assets/sun.svg'
+                        }
+                        alt=""
+                    />
                 </div>
             </div>
         </nav>

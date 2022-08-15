@@ -9,6 +9,18 @@
     font-family: 'Nunito Sans', sans-serif;
     padding-left: 50px;
     font-weight: 600;
+    transition: all 2s;
+}
+
+#dark .search input {
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%), 0 -5px 10px rgb(0 0 0 / 10%);
+    transition: all 2s;
+}
+
+#dark .search input::placeholder {
+    color: white;
 }
 
 input:focus {

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/SearchBar.css';
 import SearchIcon from '@mui/icons-material/Search';
+import { ThemeContext } from '../App';
 
 function SearchBar({ setData, placeholder, data }) {
     const handleChange = (e) => {
@@ -12,6 +13,9 @@ function SearchBar({ setData, placeholder, data }) {
         });
         setData(result);
     };
+
+    const { theme } = React.useContext(ThemeContext);
+
     return (
         <div className="search">
             <div className="search-inputs">
@@ -23,7 +27,11 @@ function SearchBar({ setData, placeholder, data }) {
                     onChange={handleChange}
                 />
                 <div className="search-icon">
-                    <SearchIcon color="action" />
+                    {theme === 'light' ? (
+                        <SearchIcon color="action" />
+                    ) : (
+                        <SearchIcon color="action" style={{ color: 'white' }} />
+                    )}
                 </div>
             </div>
             {/* <div className="data-results"></div> */}

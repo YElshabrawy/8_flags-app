@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/DropBox.css';
 import Select from 'react-select';
+import { ThemeContext } from '../App';
 
 function DropBox(props) {
     const options = props.optionsData.map((o) => {
@@ -26,6 +27,33 @@ function DropBox(props) {
             boxShadow: 'none',
             height: 46,
             color: 'black',
+            transition: 'all 2s',
+        }),
+    };
+
+    const darkStyle = {
+        control: (base) => ({
+            ...base,
+            border: 0,
+            height: 46,
+            color: '#FFF',
+            backgroundColor: 'hsl(209, 23%, 22%)',
+            boxShadow:
+                '0 5px 10px rgb(0 0 0 / 10%), 0 -5px 10px rgb(0 0 0 / 10%)',
+            transition: 'all 2s',
+        }),
+        menu: (base) => ({
+            ...base,
+            backgroundColor: 'hsl(209, 23%, 22%)',
+            color: '#FFF',
+        }),
+        placeholder: (base) => ({
+            ...base,
+            color: '#FFF',
+        }),
+        singleValue: (base) => ({
+            ...base,
+            color: '#FFF',
         }),
     };
 
@@ -41,13 +69,15 @@ function DropBox(props) {
         }
     };
 
+    const { theme } = React.useContext(ThemeContext);
+
     return (
         <Select
             options={options}
             placeholder={props.placeholder}
             className="dropdown2"
             theme={customTheme}
-            styles={style}
+            styles={theme === 'light' ? style : darkStyle}
             isClearable
             onChange={handleChange}
         />

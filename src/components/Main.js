@@ -11,23 +11,44 @@ function Main() {
     const [countriesData2, setCountriesData2] = React.useState([]);
     const [regions, setRegions] = React.useState([]);
 
-    React.useEffect(() => {
-        axios.get('https://restcountries.com/v3.1/all').then((data) => {
-            data.data.sort((a, b) =>
-                a.name.common.localeCompare(b.name.common)
-            );
-            setCountriesData(data.data);
-            // console.log('Data impotred successfully!');
-            // console.log(data.data);
-            setCountriesData2(data.data);
+    // console.log('wid', window.sessionStorage.getItem('count'));
 
-            let regArr = data.data.map((c) => {
+    React.useEffect(() => {
+        if (!window.sessionStorage.getItem('countryData')) {
+            // console.log('am not initialized yet!');
+            axios.get('https://restcountries.com/v3.1/all').then((data) => {
+                data.data.sort((a, b) =>
+                    a.name.common.localeCompare(b.name.common)
+                );
+                window.sessionStorage.setItem(
+                    'countryData',
+                    JSON.stringify(data.data)
+                );
+                setCountriesData(data.data);
+                setCountriesData2(data.data);
+
+                let regArr = data.data.map((c) => {
+                    return c.region;
+                });
+                const unique = [...new Set(regArr)];
+                setRegions(unique);
+                // console.log(regions);
+            });
+        } else {
+            // console.log('lol xd');
+            const myData = JSON.parse(
+                window.sessionStorage.getItem('countryData')
+            );
+
+            setCountriesData(myData);
+            setCountriesData2(myData);
+
+            let regArr = myData.map((c) => {
                 return c.region;
             });
             const unique = [...new Set(regArr)];
             setRegions(unique);
-            // console.log(regions);
-        });
+        }
     }, []);
 
     const cards = countriesData.map((c) => {

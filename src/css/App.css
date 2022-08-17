@@ -187,7 +187,42 @@ p {
     display: flex;
     align-items: center;
     width: 100%;
+    /* color: #fff; */
+}
+
+#dark .data {
     color: #fff;
+}
+
+.country--img {
+    width: 426px;
+    max-height: 262px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%), 0 -5px 10px rgb(0 0 0 / 10%);
+    margin-right: 120px;
+}
+
+.country-info h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.all-props {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.left {
+    margin-right: 120px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+#dark .country--img {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%), 0 -5px 10px rgb(0 0 0 / 10%);
 }
 
 @keyframes spin {
